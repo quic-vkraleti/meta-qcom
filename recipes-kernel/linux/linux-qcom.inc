@@ -19,6 +19,10 @@ S = "${WORKDIR}/git"
 
 KERNEL_CONFIG ??= "qcom_defconfig"
 
+# Temporarily disable crypto support
+SRC_URI:append = " file://disable_crypto.config"
+KERNEL_CONFIG_FRAGMENTS += "${UNPACKDIR}/disable_crypto.config"
+
 kernel_conf_variable() {
     sed -e "/CONFIG_$1[ =]/d;" -i ${B}/.config
     if test "$2" = "n"
