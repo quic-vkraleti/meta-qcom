@@ -3,6 +3,9 @@
 # Provider for linux kernel
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-yocto-dev"
 
+PREFERRED_PROVIDER_virtual/kernel:qcom-base-bsp ?= "linux-qcom-base"
+PREFERRED_PROVIDER_virtual/kernel:qcom-custom-bsp ?= "linux-qcom-custom"
+
 KERNEL_IMAGETYPE ?= "Image"
 KERNEL_IMAGETYPES ?= "Image.gz"
 
