@@ -32,6 +32,7 @@ INHIBIT_DEFAULT_DEPS = "1"
 do_install () {
 	oe_runmake install 'DESTDIR=${D}'
         install -m 0644 LICENSE.qcom ${D}${datadir}/qcom/
+        install -m 0644 LICENSE.qcom-2 ${D}${datadir}/qcom/
 }
 
 PACKAGES =+ "\
